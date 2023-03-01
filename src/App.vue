@@ -13,7 +13,7 @@
       <v-app-bar-title class="flex text-center"><h2>Task List App</h2></v-app-bar-title>
     </v-app-bar>
 
-    <h1 class="d-none d-sm-flex d-md-flex d-lg-flex light-green-bg">-</h1>
+    <h2 class="pt-0 pt-lg-12 light-green-bg">-</h2>
     <v-main class="pt-16 pt-md-16 light-green-bg">
 
       <!-- Input fields - Task Name Input, Date Picker Input and Add Task Button -->
