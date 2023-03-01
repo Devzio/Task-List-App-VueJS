@@ -10,8 +10,8 @@
 How to Use the Project:
 - Add a new task by typing in the task name, then click on the plus button or press enter key.
 - You may add a new task with or without a due date.
-- Use the due date picker to select a due date.
-- Delete a task using the trash icon to the right.
+- Use the date picker to select a due date.
+- Delete a task using the trash-can icon to the right.
 - Check off a finished task by clicking on the task or on the checkbox on the left.
 - Use pagination buttons below to see more task pages.
 
