@@ -1,5 +1,5 @@
 # task-list-app
- A simple Task List CRUD operation web app using VueJS and Vuetify with Add, Delete, Pagination, Date Picker functions.
+ A simple Task List web app using VueJS and Vuetify with Add, Delete, Pagination, Date Picker functions.
 
  How to run:
  1) Open 'task-list-app' folder with VSCode.
