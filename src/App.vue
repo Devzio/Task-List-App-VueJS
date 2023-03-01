@@ -1,9 +1,7 @@
 <template>
   <v-app id="inspire">
-    
-    TODO: pagination after more than 5 tasks added
-    TODO: due date picker to work
 
+    <!-- Top App Bar -->
     <v-app-bar absolute color="#6A96AB" dark src="https://picsum.photos/1920/1080?random" fade-img-on-scroll>
       <template v-slot:img="{ props }">
         <v-img
@@ -14,9 +12,11 @@
       <v-spacer class="d-none d-md-flex d-lg-flex d-xl-flex"></v-spacer>
       <v-app-bar-title class="flex text-center"><h2>Task List App</h2></v-app-bar-title>
     </v-app-bar>
+
     <h1 class="d-none d-sm-flex d-md-flex d-lg-flex light-green-bg">-</h1>
     <v-main class="pt-16 pt-md-16 light-green-bg">
 
+      <!-- Input fields - Task Name Input, Date Picker Input and Add Task Button -->
       <v-layout align-center justify-center >
         <div width="900px">
           <v-form ref="form" v-model="valid" lazy-validation>
@@ -79,12 +79,13 @@
         </div>
       </v-layout>
       
+      <!-- Task List Card -->
       <v-layout align-center justify-center class="mx-4 mx-lg-0 my-lg-10">
         <v-card height="560px" width="900px" rounded="lg" class="white border mb-4">
           <v-list flat subheader three-line v-if="tasks.length">
             <v-subheader>Tasks List</v-subheader>
             <v-divider></v-divider>
-
+            <!-- Task List -->
             <v-list-item-group class="list-item-group">
               <div v-for="task in visibleTasks" :key="task.id">
                 <v-list-item @click="doneTask(task.id)" :class="{ 'grey lighten-3' : task.done }">
@@ -97,7 +98,7 @@
                     <v-list-item-content>
                       <v-list-item-title class="text-lg-h6 font-weight-regular" :class="{ 'text-decoration-line-through' : task.done }">{{ task.title }}</v-list-item-title>
                       <v-list-item-subtitle><v-icon v-if="task.dueDate" small class="calendar-icon">mdi-calendar</v-icon>{{ task.dueDate }}</v-list-item-subtitle>
-                      <!-- To use niceDate use this (buggy, not recommended until fixed): {{ task.dueDate | niceDate }} -->
+                      <!-- To use niceDate use this (buggy, needs debug): {{ task.dueDate | niceDate }} -->
                     </v-list-item-content>
 
                     <v-list-item-action>
@@ -138,11 +139,12 @@
 import { format } from 'date-fns'
 
   export default {
-    filters: {
-      niceDate(date){
-        return format(new Date(date), 'dd MMM yyyy')
-      }
-    },
+    // Date formatting
+    // filters: {
+    //   niceDate(date){
+    //     return format(new Date(date), 'dd MMM yyyy')
+    //   }
+    // },
     data() {
       return {
         newTaskTitle: "",
@@ -210,23 +212,25 @@ import { format } from 'date-fns'
       _this.updatePage(_this.page);
     },
     methods: {
+      // Done Task
       doneTask(id) {
         let task = this.tasks.filter(task => task.id === id)[0]
         task.done = !task.done
       },
+      // Delete Task
       deleteTask(id) {
         this.tasks = this.tasks.filter(task => task.id !== id)
         let _this = this;
         _this.initPage();
         _this.updatePage(_this.page);
       },
+      // Add Task
       addTask() {
         if(this.newTaskTitle || this.newTaskTitle && this.newDueDate){
           let newTask = {
             id: Date.now(),
             title: this.newTaskTitle,
             dueDate: this.newDueDate,
-            // dueDate: "2024-03-14",
             done: false
           }
           this.tasks.push(newTask)
@@ -238,6 +242,7 @@ import { format } from 'date-fns'
         }
       },
       
+      // Pagination Handling
       initPage() {
         let _this = this;
         _this.tasksCount = _this.tasks.length;
@@ -262,6 +267,7 @@ import { format } from 'date-fns'
 
     },
     computed: {
+      // Calculates number of pages required for pagination handling
       pages() {
         let _this = this;
         if (_this.pageSize == null || _this.tasksCount == null) return 0;
