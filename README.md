@@ -15,7 +15,7 @@ npm i
 ```
 
 ## How To Run The Project
-- Run run comand in terminal
+- Run command in terminal(ctrl+j)
 ```
 npm run serve
 ```
