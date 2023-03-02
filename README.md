@@ -3,9 +3,8 @@
 
 ## Requirements
 - Install Node.js
-```
 https://nodejs.org/en/download/
-```
+
 - Install Vue CLI - Vue 2.x, Sass/SCSS
 ```
 npm install -g @vue/cli
@@ -15,7 +14,6 @@ npm i
 ```
 
 ## How To Run The Project
-- Run command in terminal(ctrl+j)
 ```
 npm run serve
 ```
