@@ -1,13 +1,27 @@
 # task-list-app
  A simple Task List web app using VueJS and Vuetify with Add, Delete, Pagination, Date Picker functions.
 
- How to run:
- 1) Open 'task-list-app' folder with VSCode.
- 2) Open Terminal.
- 3) Run 'npm run serve'.
- 4) App runs on 'http://localhost:8081/'.
+## Requirements
+- Install Node.js
+```
+https://nodejs.org/en/download/
+```
+- Install Vue CLI - Vue 2.x, Sass/SCSS
+```
+npm install -g @vue/cli
+```
+```
+npm i
+```
 
-How to Use the Project:
+## How To Run The Project
+- Run run comand in terminal
+```
+npm run serve
+```
+- App runs on 'http://localhost:8081/'.
+
+## How To Use The Project
 - Add a new task by typing in the task name, then click on the plus button or press enter key.
 - You may add a new task with or without a due date.
 - Use the date picker to select a due date.
