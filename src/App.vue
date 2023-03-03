@@ -13,7 +13,9 @@
       <v-app-bar-title class="flex text-center"><h2>Task List App</h2></v-app-bar-title>
     </v-app-bar>
 
-    <h2 class="pt-0 pt-lg-12 light-green-bg">-</h2>
+    <div class="light-green-bg">
+      <h2 class="pt-0 pt-lg-12 vis-hidden">-</h2>
+    </div>
     <v-main class="pt-16 pt-md-16 light-green-bg">
 
       <!-- Input fields - Task Name Input, Date Picker Input and Add Task Button -->
@@ -318,4 +320,7 @@ import { format } from 'date-fns'
 
 .v-list-item:hover
   background-color: #f5f5f7
+
+.vis-hidden
+  visibility: hidden
 </style>
